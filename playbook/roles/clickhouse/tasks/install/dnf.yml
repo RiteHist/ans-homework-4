@@ -2,12 +2,12 @@
 #Main installation actions
 #https://clickhouse.com/docs/en/getting-started/#installation
 
-- name: Install by YUM | Ensure clickhouse repo GPG key imported
-  rpm_key:
-    state: present
-    key: "{{ clickhouse_repo_key }}"
-  tags: [install]
-  become: true
+# - name: Install by YUM | Ensure clickhouse repo GPG key imported
+#   rpm_key:
+#     state: present
+#     key: "{{ clickhouse_repo_key }}"
+#   tags: [install]
+#   become: true
 
 - name: Install by YUM | Ensure clickhouse repo installed
   yum_repository:
@@ -16,8 +16,8 @@
     description: "Clickhouse repo"
     baseurl: "{{ clickhouse_repo }}"
     enabled: yes
-    gpgcheck: 1
-    gpgkey: "{{ clickhouse_repo_key }}"
+    gpgcheck: 0
+    # gpgkey: "{{ clickhouse_repo_key }}"
   tags: [install]
   become: true
 
