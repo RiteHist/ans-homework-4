@@ -34,7 +34,7 @@ vpc_params = [ {
 } ]
 
 replicas_num = {
-  "clickhouse" = 2
+  "clickhouse" = 1
   "vector" = 1
-  "lighthouse" = 2
+  "lighthouse" = 1
 }

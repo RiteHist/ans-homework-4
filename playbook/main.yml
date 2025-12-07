@@ -4,3 +4,9 @@
   become: true
   roles:
     - clickhouse
+
+- name: Install Vector
+  hosts: vector
+  become: true
+  roles:
+    - vector
